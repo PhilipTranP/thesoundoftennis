@@ -8,10 +8,11 @@ import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import { useTheme } from 'next-themes'
+import React, { useEffect } from 'react'
 
 const LayoutWrapper = ({ children }) => {
-  console.log('check children', children)
-  const { theme } = useTheme()
+  const { theme, setTheme } = useTheme()
+  useEffect(() => setTheme('dark'), [])
   return (
     <SectionContainer>
       <div className="flex flex-col justify-between h-screen">
